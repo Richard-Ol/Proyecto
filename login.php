@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Consultar el nombre de usuario en la base de datos
-    $sql = "SELECT id, nombre, contraseña FROM entrenadores WHERE nombre = ?";
+    $sql = "SELECT id, nombre, contraseña FROM Usuarios WHERE nombre = ?";
     $stmt = $conn->prepare($sql);
 
     // Verificar si la consulta fue preparada correctamente
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $nombre;
 
             // Redirigir a la página principal
-            header("Location: Pantalla.php");
+            header("Location: index.php");
             exit(); // Asegurar que el script se detenga tras la redirección
         } else {
             // Mensaje genérico para evitar exponer si el usuario existe o no
