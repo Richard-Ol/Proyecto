@@ -14,7 +14,7 @@ if ($password === $confirm_password) {
     $hashed_password = hashPassword($password);
 
     // Insertar el nuevo entrenador en la base de datos
-    $sql = "INSERT INTO entrenadores (nombre, contraseña) VALUES (?, ?)";
+    $sql = "INSERT INTO Usuarios (nombre, contraseña) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $username, $hashed_password);
     
